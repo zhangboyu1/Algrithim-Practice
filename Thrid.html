@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+    <script type="text/javascript">
+    	
+    	function shortestword(sentence) {
+    		
+       var arry_words = sentence.split(" ");
+        
+        console.log(arry_words);
+        
+        
+         var shortestlength=0; 
+         
+//      console.log(shortestlength);
+        
+        for(var i = 0; i<arry_words.length;i++){
+        	
+        	 for (var j=i+1; j<arry_words.length; j++)
+        	 
+            if(arry_words[i].length < arry_words[j].length){
+            	
+              var shortestlength = arry_words[i].length;
+//            console.log(shortestlength);
+            } 
+//           console.log(shortestlength);
+        }
+        return shortestlength;
+
+        
+    }
+    	
+  console.log(shortestword('My name is jerry'));
+    </script>
+	<body>
+	</body>
+</html>

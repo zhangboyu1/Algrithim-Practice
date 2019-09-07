@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		*{
+			font-family: "arial, helvetica, sans-serif";
+		}
+		
+		.calculator{
+			display: flex;
+			flex-direction: column;
+			border:5px solid black;
+			width:-webkit-max-content;
+		}
+		.header{
+			background-color: lightslategrey;
+		}
+		
+		.main{
+			display: flex;
+			background-color: lightgrey;
+			height: 100px;
+			/*min-width: 100px;*/
+			flex-grow: 1;
+		}
+		
+		.button{
+			flex-grow:2;
+			padding:0px;
+			min-width:235px;
+		}
+		
+		button:hover{
+			background-color: darkslategrey;
+			color:whitesmoke;
+		}
+		
+		button{
+			width: 100%;
+			height:100%;
+			padding:0px;
+			/*border:4px solid #000000;*/
+			background-color: slategrey;
+		  }
+		  
+		.result{
+			flex-grow:3;
+			flex-direction: column;
+			max-width:290px;
+			overflow:auto;
+		}
+		
+		.reuslt_result2{
+			border:1px, solid,red;
+		}
+		
+		</style>
+	<body>
+		<div class="calculator">
+			<div class="header">
+				<p>. (TWO SUM) Given an array of integers, find two numbers <br>such that they add up to a specific target number.
+				eg:a=[2,4,3,1,5,6,3,5,4];
+</p>
+			</div>
+			<div class="main">
+			<div class="button">
+				<button id="cal" onclick="TwoSum()" >Click ME!</button>
+			</div>
+			<div class="result">
+				<div class="result_text">The calculated results would be.....</div>
+				
+				<div id="reuslt_result1"><span>The Array :</span></div>
+				<div id="reuslt_result2"></div>
+			</div>
+		</div>
+		</div>
+		
+		<script type="text/javascript">
+			
+			 var a=[2,4,3,1,5,6,3,5,4];
+			 
+			 var target=prompt("Input the sepecific number");//Input a specific number;
+			 var firstIn=[];
+			 var secondIn=[];
+			 var h=0;
+			 
+		function TwoSum(){
+		    
+		   for(var i=0;i<a.length;i++){
+		    	
+		   for (var j=i+1;j<a.length;j++){
+		   	
+		   if(a[i]+a[j]==target){
+		   	
+		   	if(i<j){
+		   		  
+		   		  
+		    var b=[a[i],a[j]];
+		    
+		    firstIn.push(b);
+		    
+		    console.log(firstIn);
+		    h++;
+          }
+
+		   }
+		   }
+		    	
+		   }
+		   
+		  var text = "<ul>";
+		   for (var count = 0; count <=h; count++) {
+           text += "<li>" + firstIn[count] + "</li>";
+}
+           text += "</ul>";
+
+           document.getElementById("reuslt_result2").innerHTML = text;
+		   
+		   var re2=document.getElementById("reuslt_result2");
+		    
+		   re2.innerHTML= text;
+		   
+		}
+		
+		</script>
+	</body>
+</html>
