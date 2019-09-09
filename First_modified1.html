@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		*{
+			font-family: "arial, helvetica, sans-serif";
+		}
+		
+		.calculator{
+			display: flex;
+			flex-direction: column;
+			border:5px solid black;
+			width:-webkit-max-content;
+		}
+		.header{
+			background-color: lightslategrey;
+		}
+		
+		.main{
+			display: flex;
+			background-color: lightgrey;
+			height: 100px;
+			/*min-width: 100px;*/
+			flex-grow: 1;
+		}
+		
+		.button{
+			flex-grow:2;
+			padding:0px;
+			min-width:235px;
+		}
+		
+		button:hover{
+			background-color: darkslategrey;
+			color:whitesmoke;
+		}
+		
+		button{
+			width: 100%;
+			height:100%;
+			padding:0px;
+			/*border:4px solid #000000;*/
+			background-color: slategrey;
+		  }
+		  
+		.result{
+			flex-grow:3;
+			flex-direction: column;
+			max-width:290px;
+			overflow:auto;
+		}
+		
+		
+		</style>
+	</head>
+	<body>
+		<div class="calculator">
+			<div class="header">
+				<p>Calculate the first 10 numbers that are multiples of 4 but not 5 between 0 and 100.
+</p>
+			</div>
+			<div class="main">
+			<div class="button">
+				<button id="cal" onclick="cal()" >Click ME!</button>
+			</div>
+			<div class="result">
+				<div class="result_text">The calculated results would be.....</div>
+				<div id="reuslt_result"></div>
+			</div>
+		</div>
+		</div>
+			
+		
+		
+	<script>
+
+//来我们先来开辟一个栈。
+
+function cal() {
+
+class numsystem {
+
+constructor(number){
+	this.item=[];
+	// console.log(item);
+	console.log(this);
+}
+
+Push(elements){
+this.item.push(elements)
+// console.log(this.item);
+}
+
+judge(){
+
+	var ar=[];
+   this.item.forEach(myfunction); 
+
+   function myfunction(elements,index){
+		//  console.log(typeof elements);
+		//  console.log(index);
+
+	if (elements%4==0 && elements%5!=0){
+	   
+	//    console.log(elements);
+	//    console.log(typeof elements);
+	ar.push(elements);
+	// 	console.log(ar);	
+	// }
+	// console.log(ar);
+}
+   }
+//    console.log(ar);
+   this.ar=ar;
+   for( var i=0; i<10;i++){
+   console.log(ar[i]);
+   }
+   var re=document.getElementById("reuslt_result");
+
+   re.innerHTML= `Please check the Console!!!!!!!`;
+
+}
+
+	
+		
+	   
+}
+
+var score1= new numsystem();
+
+for(var i=0;i<100;i++){
+
+ score1.Push(i);
+
+}
+
+console.log(score1.judge());
+
+        
+}
+</script>
+		</div>
+	</body>
+</html>
