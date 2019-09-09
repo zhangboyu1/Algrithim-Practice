@@ -13,35 +13,26 @@
 
         constructor(number){
             this.item=[];
-            // console.log(item);
             console.log(this);
         }
 
      Push(elements){
+         
         this.item.push(elements)
         // console.log(this.item);
      }
         
-    //  Foreach(){
-    //     item.forEach(key,index);
-    //          }
     judge(){
 
         return this.item.forEach(myfunction); 
-
            function myfunction(element){
-
                if(element%4==0 && element%5!=0){
                 
                 return console.log(element);
                }
            }
            
-         }
-            
-        
-       
-    
+       }
     }
         
      var score1= new stack();//定义了一个空栈，并引用了它
@@ -49,17 +40,8 @@
      for(var i=0;i<100;i++){
          score1.Push(i);
      }
-   
-     console.log(score1.item);
-
+    console.log(score1.item);
     console.log(score1.judge());
-
-
-
-   
-
-
-    
     </script>
 </body>
 </html>
