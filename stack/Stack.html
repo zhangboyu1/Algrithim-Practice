@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+        // 数据结构的联系： 栈
+        var Stack = function() {
+
+            var item = [];
+
+            this.push = function(element) {
+                return item.push(element);
+            }
+            this.pop = function() {
+                return item.pop();
+            }
+            this.peek = function() {
+                return item[item.length - 1];
+            }
+            this.isEmpty = function() {
+                return item.length == 0;
+            }
+            this.clear = function(element) {
+                return item = [];
+            }
+
+            this.itemSize = function() {
+                return item.length;
+            }
+
+            this.checkItem = function() {
+                return item
+            }
+        }
+
+        var s1 = new Stack(); //创建实例
+        //十进制数转二进制数
+        var divBy2 = function(number) {
+
+            //函数体中所创建的实例。会在函数调用完之后销毁。
+            var stack = new Stack();
+            // console.log(s1)
+            while (number > 0) {
+                var yu = number % 2;
+                stack.push(yu);
+                number = Math.floor(number / 2);
+            }
+            return stack.checkItem()
+        }
+        divBy2(10);
+
+        console.log(stack)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
