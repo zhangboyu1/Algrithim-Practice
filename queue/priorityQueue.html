@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+        var PriorityQueue = function() {
+            var items = [];
+
+            //辅助类；
+            var QueueItem = function(element, priority) {
+                this.element = element;
+                this.priority = priority;
+            }
+
+            this.enqueue = function(element, priority) {
+                var queueItem = new QueueItem(element, priority);
+                console.log(queueItem)
+
+                var added = false;
+
+                for (var i = 0; i < items.length; i++) {
+
+                    console.log(1)
+                    if (queueItem.priority > items[i].priority) {
+                        items.splice(i, 0, queueItem);
+                        added = true;
+                        break
+                    }
+                }
+                if (!added) {
+                    console.log(2)
+                    items.push(queueItem)
+                }
+            }
+
+            this.getItems = function() {
+
+                console.log(items)
+
+            }
+        }
+
+        var pq = new PriorityQueue();
+        pq.enqueue('小黑', 10);
+        pq.enqueue('小明', 15);
+        pq.getItems();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

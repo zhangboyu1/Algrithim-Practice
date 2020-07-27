@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+        // 数据结构的联系： 栈
+        var Queue = function() {
+
+            var item = [];
+
+            this.push = function(element) {
+                return item.push(element);
+            }
+            this.shift = function() {
+                return item.shift();
+            }
+            this.checkHead = function() {
+                return item[0];
+            }
+            this.isEmpty = function() {
+                return item.length == 0;
+            }
+            this.clear = function(element) {
+                return item = [];
+            }
+
+            this.itemSize = function() {
+                return item.length;
+            }
+
+            this.checkItem = function() {
+                return item
+            }
+        }
+
+        var q1 = new Queue(); //创建实例
+
+        //击鼓传花这个游戏
+        var chuanHua = function(people, number) {
+
+                //引入队列操作；
+                var q1 = new Queue();
+
+                console.log(q1.itemSize)
+                for (i = 0; i < people.length; i++) {
+
+                    q1.push(people[i]);
+
+                }
+
+                console.log(q1.itemSize())
+
+                while (q1.itemSize() > 1) {
+
+                    for (i = 0; i < number - 1; i++) {
+                        console.log("____传花给了" + q1.checkHead())
+                        q1.push(q1.shift());
+                    }
+                    var taotai = q1.shift()
+                    console.log("------taotaideshi" + taotai)
+                }
+
+                console.log("最后剩下的是" + q1.checkHead())
+            }
+            //people
+        var people = ['a', 'b', 'c', 'd', 'e', 'f'];
+
+        // times for passing the hua
+        var number = 3;
+
+        chuanHua(people, number);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
