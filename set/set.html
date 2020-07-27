@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        //set 集合。。。
+        // 集合
+        // ES6
+        function Set(value) {
+            var item = {}
+            this.append = function(value) {
+                if (!item.hasOwnProperty(value)) {
+                    item[value] = value;
+                } else {
+                    console.log('Has already has that attribute!')
+                }
+            }
+
+            this.getItem = function() {
+                return item
+            }
+
+            this.checkSize = function() {
+                itemSize = Object.keys(item).length
+                return itemSize
+            }
+
+            this.deleteItem = function(value) {
+                delete item[value]
+            }
+
+            this.merge = function(otherSet) {
+                var targetItem = new Set()
+                for (var x in item) {
+                    targetItem.append(item[x])
+                }
+                //现在要把另一个集合合并到这个targetItem中，如何做到：
+                for (var y in otherSet) {
+                    targetItem.append(otherSet[y])
+                }
+
+                return targetItem.getItem()
+            }
+
+            this.interSection = function(otherSet) {
+                //实现差集
+                var targetItem = new Set()
+                    //先要判断两个对象中的键值对是否相等
+                for (var z in otherSet) {
+                    if (item.hasOwnProperty(otherSet[z])) {
+                        targetItem.append(item[z])
+                    } else {
+                        console.log('These two sets dont have any of intersected items')
+                    }
+                }
+                return targetItem.getItem()
+            }
+
+            this.difference = function(otherSet) {
+                var targetItem = new Set()
+                    //先要判断两个对象中的键值对是否相等
+                for (var zz in otherSet) {
+                    if (!item.hasOwnProperty(otherSet[zz])) {
+                        targetItem.append(item[zz])
+                    } else {
+                        console.log('These two sets dont have any of different items')
+                    }
+                }
+                return targetItem.getItem()
+
+            }
+        }
+
+        var s1 = new Set();
+        var s2 = new Set();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
