@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <script>
+        function Tree() {
+
+            var root = null
+
+            function Node(value) { //辅助类
+                this.value = value;
+                this.left = null;
+                this.right = null;
+            }
+
+
+            var insertNode = function(node_from, node_to) {
+
+                console.log('start to insert...')
+                    //要插入这个节点，首先要满足一定的条件：
+                    //条件就是： 
+                if (node_from.value > node_to.value) {
+
+                    console.log('find the left')
+                        //放到 它的左边
+                    if (node_from.left == null) {
+                        console.log('insert into yezi')
+                        node_from.left = node_to
+                    } else {
+
+                        console.log('insert into child node')
+                        insertNode(node_from.left, node_to)
+                    }
+
+                    return
+                }
+
+                if (node_from.value < node_to.value) {
+                    //放到它的右边
+                    console.log('find the right')
+                        //放到 它的左边
+                    if (node_from.right == null) {
+                        console.log('insert into yezi')
+                        node_from.right = node_to
+                    } else {
+                        console.log('insert into child node')
+                        insertNode(node_from.right, node_to)
+                    }
+                }
+            }
+
+            this.insert = function(value) {
+                var newNode = new Node(value);
+                if (root == null) {
+                    //this is an empty tree
+                    console.log('Root is null')
+                    root = newNode
+
+                } else {
+                    insertNode(root, newNode)
+                }
+            }
+
+
+
+            var findMin = function(node_from) {
+                if (!node_from.left) {
+                    return node_from
+                }
+
+                if (node_from.left) {
+                    return findMin(node_from.left);
+                }
+            }
+
+            this.findMin = function() {
+                if (root == null) {
+                    return null
+                } else {
+                    return findMin(root)
+                }
+            }
+
+            this.findMax = function() {
+                // The same principal with findMin value;
+            }
+
+            this.delete = function() {
+
+
+
+
+            }
+
+            var treverse = function(node) {
+                if (node == null) return
+                treverse(node.left);
+                treverse(node.right);
+                console.log(node.value)
+            }
+
+            this.treverse = function() {
+                //如何遍历这个树结构？
+                //其实已经遍历过了。
+                return treverse(root)
+            }
+
+
+            this.getRoot = function() {
+                return root
+            }
+        }
+
+
+        var t = new Tree()
+        t.insert(8)
+        t.insert(5)
+        t.insert(2)
+
+        t.getRoot() //
+
+
+
+        t.treverse()
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
